@@ -27,8 +27,9 @@ app.use('/api/v1/todo',todoRouter)
 connect();
 
 app.get("/", (req, res) => {
-app.use(express.static(path.resolve(__dirname, "frontend", "build")));
-res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+// app.use(express.static(path.resolve(__dirname, "frontend", "build")));
+// res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+return res.status(200).json({msg:"hello"})
 });
 
 app.listen(process.env.PORT,()=>{
