@@ -44,7 +44,6 @@ export const updatePost=async (req,res)=>{
 }
 
 export const getPosts=async (req,res)=>{
-    // in postman http://localhost:2000/api/v1/todo/getposts?page='2'
     try{
         const user=req.user
         const id=user.id;

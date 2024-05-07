@@ -41,6 +41,7 @@ export const login=async (req,res)=>{
     if(!email || !password){
         return res.status(400).json({message:"Enter email and password"})
     }
+    console.log('!!!!!!!!!!!!!!!!!',email,password)
     try{
     const user=await User.findOne({email});
     if(!user){
