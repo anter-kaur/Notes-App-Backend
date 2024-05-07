@@ -9,7 +9,7 @@ const AuthMiddleware=(req,res,next)=>{
     let token = null;
 
         // Check if the Authorization header exists and if it starts with "Bearer "
-        if (req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
+        if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
             // Extract the token by removing the "Bearer " prefix
             token = req.headers.authorization.split(" ")[1];
         } else if (req.cookies.accessToken) {

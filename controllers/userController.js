@@ -41,7 +41,6 @@ export const login=async (req,res)=>{
     if(!email || !password){
         return res.status(400).json({message:"Enter email and password"})
     }
-    console.log('!!!!!!!!!!!!!!!!!',email,password)
     try{
     const user=await User.findOne({email});
     if(!user){
@@ -59,7 +58,10 @@ export const login=async (req,res)=>{
         httpOnly:true,
         maxAge:3*24*60*60*1000
     })
-    .status(200).json({message:"Logged in successfully"})
+    .status(200).json({message:"Logged in successfully",
+    data:user,
+    token:accessToken
+    })
 }
 catch(error){
     if (error.name === 'ValidationError') {
