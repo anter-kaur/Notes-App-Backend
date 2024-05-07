@@ -12,7 +12,9 @@ dotenv.config()
 
 app.use(express.json())
 
-app.use(cors({origin:'http://localhost:3000',
+app.use(cors({origin:['http://localhost:3000',
+'https://notes-app-ashen-iota.vercel.app/'
+],
     credentials:true
 }))
 
