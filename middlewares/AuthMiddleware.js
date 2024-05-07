@@ -2,7 +2,8 @@ import jwt from 'jsonwebtoken'
 
 const AuthMiddleware=(req,res,next)=>{
     try{
-        const token=req.cookies.accessToken;
+        const token=req.headers["authorization"] || req.cookies.accessToken;
+        
     const decodedToken=jwt.verify(token,process.env.JWT_ACCESS_TOKEN)
 
     // if(!decodedToken){
